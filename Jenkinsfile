@@ -22,7 +22,7 @@ pipeline {
         stage('Push'){
             steps{
                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-                 sh 'docker push sravanmarolix/myimag:latest'
+                 sh 'docker push sravanmarolix/myimage:latest'
                 }
             }
         stage('Deploy'){
