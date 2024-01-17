@@ -16,13 +16,13 @@ pipeline {
         }
         stage('Build and Test'){
             steps{
-                sh 'docker build . -t sravanmarolix/myimage:latest'
+                sh 'docker build . -t sravanmarolix/test:latest'
             }
         }
         stage('Push'){
             steps{
                 sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-                 sh 'docker push sravanmarolix/myimage:latest'
+                 sh 'docker push sravanmarolix/test:latest'
                 }
             }
         stage('Deploy'){
